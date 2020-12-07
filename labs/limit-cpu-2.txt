@@ -1,0 +1,65 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2beta1
+metadata:
+  name: runyapp2
+  namespace: myproject
+  selfLink: >-
+    /apis/autoscaling/v2beta1/namespaces/myproject/horizontalpodautoscalers/runyapp2
+  uid: e16e7819-00f5-4fae-be38-716abc2dce12
+  resourceVersion: '895722'
+  creationTimestamp: '2020-12-07T18:28:35Z'
+  managedFields:
+    - manager: oc
+      operation: Update
+      apiVersion: autoscaling/v1
+      time: '2020-12-07T18:28:35Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:maxReplicas': {}
+          'f:minReplicas': {}
+          'f:scaleTargetRef':
+            'f:apiVersion': {}
+            'f:kind': {}
+            'f:name': {}
+          'f:targetCPUUtilizationPercentage': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: autoscaling/v1
+      time: '2020-12-07T18:28:50Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:autoscaling.alpha.kubernetes.io/conditions': {}
+        'f:status':
+          'f:currentReplicas': {}
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: runyapp2
+    apiVersion: apps/v1
+  minReplicas: 2
+  maxReplicas: 4
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 60
+status:
+  currentReplicas: 2
+  desiredReplicas: 0
+  currentMetrics: null
+  conditions:
+    - type: AbleToScale
+      status: 'True'
+      lastTransitionTime: '2020-12-07T18:28:50Z'
+      reason: SucceededGetScale
+      message: the HPA controller was able to get the target's current scale
+    - type: ScalingActive
+      status: 'False'
+      lastTransitionTime: '2020-12-07T18:28:50Z'
+      reason: FailedGetResourceMetric
+      message: 'the HPA was unable to compute the replica count: missing request for cpu'
+

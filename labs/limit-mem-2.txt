@@ -1,0 +1,62 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2beta2
+metadata:
+  name: memory-hpa
+  namespace: myproject
+  selfLink: >-
+    /apis/autoscaling/v2beta2/namespaces/myproject/horizontalpodautoscalers/memory-hpa
+  uid: e74b85ea-bbbb-4233-9491-c6df160cd11e
+  resourceVersion: '901353'
+  creationTimestamp: '2020-12-07T18:42:04Z'
+  managedFields:
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: autoscaling/v1
+      time: '2020-12-07T18:42:19Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:autoscaling.alpha.kubernetes.io/conditions': {}
+    - manager: Mozilla
+      operation: Update
+      apiVersion: autoscaling/v2beta2
+      time: '2020-12-07T18:46:45Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:maxReplicas': {}
+          'f:metrics': {}
+          'f:minReplicas': {}
+          'f:scaleTargetRef':
+            'f:apiVersion': {}
+            'f:kind': {}
+            'f:name': {}
+spec:
+  scaleTargetRef:
+    kind: DeploymentConfig
+    name: runyapp
+    apiVersion: apps/v1
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
+status:
+  currentReplicas: 0
+  desiredReplicas: 0
+  currentMetrics: null
+  conditions:
+    - type: AbleToScale
+      status: 'False'
+      lastTransitionTime: '2020-12-07T18:42:19Z'
+      reason: FailedGetScale
+      message: >-
+        the HPA controller was unable to get the target's current scale:
+        deployments/scale.apps "example" not found
+
