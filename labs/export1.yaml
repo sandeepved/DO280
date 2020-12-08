@@ -1,0 +1,1200 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      openshift.io/scc: restricted
+    creationTimestamp: "2020-12-08T16:52:13Z"
+    generateName: hello-limit-867cdfc66-
+    labels:
+      deployment: hello-limit
+      pod-template-hash: 867cdfc66
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:deployment: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"38c611df-5667-4c0d-8e88-3d3d06932759"}:
+              .: {}
+              f:apiVersion: {}
+              f:blockOwnerDeletion: {}
+              f:controller: {}
+              f:kind: {}
+              f:name: {}
+              f:uid: {}
+        f:spec:
+          f:containers:
+            k:{"name":"hello-limit"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8080,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2020-12-08T16:52:13Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2020-12-08T16:52:13Z"
+    name: hello-limit-867cdfc66-4cfhv
+    namespace: schedule-limit
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: hello-limit-867cdfc66
+      uid: 38c611df-5667-4c0d-8e88-3d3d06932759
+    resourceVersion: "1035702"
+    selfLink: /api/v1/namespaces/schedule-limit/pods/hello-limit-867cdfc66-4cfhv
+    uid: 2782c5a5-e730-4c5c-aa26-a9c316728e5c
+  spec:
+    containers:
+    - image: quay.io/redhattraining/hello-world-nginx@sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+      imagePullPolicy: IfNotPresent
+      name: hello-limit
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources:
+        requests:
+          cpu: 1500m
+          memory: 20Mi
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000650000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-v6chs
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    imagePullSecrets:
+    - name: default-dockercfg-kgjfj
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000650000
+      seLinuxOptions:
+        level: s0:c26,c0
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    volumes:
+    - name: default-token-v6chs
+      secret:
+        defaultMode: 420
+        secretName: default-token-v6chs
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2020-12-08T16:52:13Z"
+      message: '0/3 nodes are available: 3 Insufficient cpu.'
+      reason: Unschedulable
+      status: "False"
+      type: PodScheduled
+    phase: Pending
+    qosClass: Burstable
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      openshift.io/scc: restricted
+    creationTimestamp: "2020-12-08T16:52:13Z"
+    generateName: hello-limit-867cdfc66-
+    labels:
+      deployment: hello-limit
+      pod-template-hash: 867cdfc66
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:deployment: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"38c611df-5667-4c0d-8e88-3d3d06932759"}:
+              .: {}
+              f:apiVersion: {}
+              f:blockOwnerDeletion: {}
+              f:controller: {}
+              f:kind: {}
+              f:name: {}
+              f:uid: {}
+        f:spec:
+          f:containers:
+            k:{"name":"hello-limit"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8080,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2020-12-08T16:52:13Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2020-12-08T16:52:13Z"
+    name: hello-limit-867cdfc66-9wr4g
+    namespace: schedule-limit
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: hello-limit-867cdfc66
+      uid: 38c611df-5667-4c0d-8e88-3d3d06932759
+    resourceVersion: "1035706"
+    selfLink: /api/v1/namespaces/schedule-limit/pods/hello-limit-867cdfc66-9wr4g
+    uid: b48f5b12-af15-4dfa-9326-dbce923a8602
+  spec:
+    containers:
+    - image: quay.io/redhattraining/hello-world-nginx@sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+      imagePullPolicy: IfNotPresent
+      name: hello-limit
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources:
+        requests:
+          cpu: 1500m
+          memory: 20Mi
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000650000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-v6chs
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    imagePullSecrets:
+    - name: default-dockercfg-kgjfj
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000650000
+      seLinuxOptions:
+        level: s0:c26,c0
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    volumes:
+    - name: default-token-v6chs
+      secret:
+        defaultMode: 420
+        secretName: default-token-v6chs
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2020-12-08T16:52:13Z"
+      message: '0/3 nodes are available: 3 Insufficient cpu.'
+      reason: Unschedulable
+      status: "False"
+      type: PodScheduled
+    phase: Pending
+    qosClass: Burstable
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      openshift.io/scc: restricted
+    creationTimestamp: "2020-12-08T16:52:13Z"
+    generateName: hello-limit-867cdfc66-
+    labels:
+      deployment: hello-limit
+      pod-template-hash: 867cdfc66
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:deployment: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"38c611df-5667-4c0d-8e88-3d3d06932759"}:
+              .: {}
+              f:apiVersion: {}
+              f:blockOwnerDeletion: {}
+              f:controller: {}
+              f:kind: {}
+              f:name: {}
+              f:uid: {}
+        f:spec:
+          f:containers:
+            k:{"name":"hello-limit"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8080,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2020-12-08T16:52:13Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2020-12-08T16:52:13Z"
+    name: hello-limit-867cdfc66-mkghj
+    namespace: schedule-limit
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: hello-limit-867cdfc66
+      uid: 38c611df-5667-4c0d-8e88-3d3d06932759
+    resourceVersion: "1035695"
+    selfLink: /api/v1/namespaces/schedule-limit/pods/hello-limit-867cdfc66-mkghj
+    uid: 80fa1e14-df36-416b-a9bb-9b1d8c72013f
+  spec:
+    containers:
+    - image: quay.io/redhattraining/hello-world-nginx@sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+      imagePullPolicy: IfNotPresent
+      name: hello-limit
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources:
+        requests:
+          cpu: 1500m
+          memory: 20Mi
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000650000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-v6chs
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    imagePullSecrets:
+    - name: default-dockercfg-kgjfj
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000650000
+      seLinuxOptions:
+        level: s0:c26,c0
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    volumes:
+    - name: default-token-v6chs
+      secret:
+        defaultMode: 420
+        secretName: default-token-v6chs
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2020-12-08T16:52:13Z"
+      message: '0/3 nodes are available: 3 Insufficient cpu.'
+      reason: Unschedulable
+      status: "False"
+      type: PodScheduled
+    phase: Pending
+    qosClass: Burstable
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "openshift-sdn",
+            "interface": "eth0",
+            "ips": [
+                "10.8.0.36"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      k8s.v1.cni.cncf.io/networks-status: |-
+        [{
+            "name": "openshift-sdn",
+            "interface": "eth0",
+            "ips": [
+                "10.8.0.36"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      openshift.io/generated-by: OpenShiftNewApp
+      openshift.io/scc: restricted
+    creationTimestamp: "2020-12-08T16:43:46Z"
+    generateName: hello-limit-867cdfc66-
+    labels:
+      deployment: hello-limit
+      pod-template-hash: 867cdfc66
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:deployment: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"38c611df-5667-4c0d-8e88-3d3d06932759"}:
+              .: {}
+              f:apiVersion: {}
+              f:blockOwnerDeletion: {}
+              f:controller: {}
+              f:kind: {}
+              f:name: {}
+              f:uid: {}
+        f:spec:
+          f:containers:
+            k:{"name":"hello-limit"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8080,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2020-12-08T16:43:46Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2020-12-08T16:43:46Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.8.0.36"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2020-12-08T16:43:58Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+            f:k8s.v1.cni.cncf.io/networks-status: {}
+      manager: multus
+      operation: Update
+      time: "2020-12-08T16:43:58Z"
+    name: hello-limit-867cdfc66-wthcq
+    namespace: schedule-limit
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: hello-limit-867cdfc66
+      uid: 38c611df-5667-4c0d-8e88-3d3d06932759
+    resourceVersion: "1033150"
+    selfLink: /api/v1/namespaces/schedule-limit/pods/hello-limit-867cdfc66-wthcq
+    uid: 2029cacf-61df-4b45-a3be-915420105ae4
+  spec:
+    containers:
+    - image: quay.io/redhattraining/hello-world-nginx@sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+      imagePullPolicy: IfNotPresent
+      name: hello-limit
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources:
+        requests:
+          cpu: 1500m
+          memory: 20Mi
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000650000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-v6chs
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    imagePullSecrets:
+    - name: default-dockercfg-kgjfj
+    nodeName: master02
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000650000
+      seLinuxOptions:
+        level: s0:c26,c0
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    volumes:
+    - name: default-token-v6chs
+      secret:
+        defaultMode: 420
+        secretName: default-token-v6chs
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2020-12-08T16:43:55Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2020-12-08T16:43:58Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2020-12-08T16:43:58Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2020-12-08T16:43:55Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: cri-o://bdc9536107eac97c5efe271fec27f93e996caec9bd2f5df7d3c16df6669ae026
+      image: quay.io/redhattraining/hello-world-nginx:v1.0
+      imageID: quay.io/redhattraining/hello-world-nginx@sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+      lastState: {}
+      name: hello-limit
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2020-12-08T16:43:58Z"
+    hostIP: 192.168.50.11
+    phase: Running
+    podIP: 10.8.0.36
+    podIPs:
+    - ip: 10.8.0.36
+    qosClass: Burstable
+    startTime: "2020-12-08T16:43:55Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-12-08T16:27:22Z"
+    labels:
+      app: hello-limit
+      app.kubernetes.io/component: hello-limit
+      app.kubernetes.io/instance: hello-limit
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+        f:spec:
+          f:ports:
+            .: {}
+            k:{"port":8080,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector:
+            .: {}
+            f:deployment: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: oc
+      operation: Update
+      time: "2020-12-08T16:27:22Z"
+    name: hello-limit
+    namespace: schedule-limit
+    resourceVersion: "1027285"
+    selfLink: /api/v1/namespaces/schedule-limit/services/hello-limit
+    uid: e2e56818-f0eb-40de-944f-46d95b11e3f4
+  spec:
+    clusterIP: 172.30.63.40
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      deployment: hello-limit
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"hello-limit:v1.0"},"fieldPath":"spec.template.spec.containers[?(@.name==\"hello-limit\")].image"}]'
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-12-08T16:27:22Z"
+    generation: 4
+    labels:
+      app: hello-limit
+      app.kubernetes.io/component: hello-limit
+      app.kubernetes.io/instance: hello-limit
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:template:
+            f:spec:
+              f:containers:
+                k:{"name":"hello-limit"}:
+                  f:image: {}
+      manager: openshift-controller-manager
+      operation: Update
+      time: "2020-12-08T16:27:23Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:image.openshift.io/triggers: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector:
+            f:matchLabels:
+              .: {}
+              f:deployment: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:openshift.io/generated-by: {}
+              f:labels:
+                .: {}
+                f:deployment: {}
+            f:spec:
+              f:containers:
+                k:{"name":"hello-limit"}:
+                  .: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":8080,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+      manager: oc
+      operation: Update
+      time: "2020-12-08T16:28:32Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:unavailableReplicas: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2020-12-08T16:52:13Z"
+    name: hello-limit
+    namespace: schedule-limit
+    resourceVersion: "1035708"
+    selfLink: /apis/apps/v1/namespaces/schedule-limit/deployments/hello-limit
+    uid: 159ef412-35e4-45bc-8dfd-ea47858af111
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 4
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        deployment: hello-limit
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          deployment: hello-limit
+      spec:
+        containers:
+        - image: quay.io/redhattraining/hello-world-nginx@sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+          imagePullPolicy: IfNotPresent
+          name: hello-limit
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources:
+            requests:
+              cpu: 1500m
+              memory: 20Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: "2020-12-08T16:27:22Z"
+      lastUpdateTime: "2020-12-08T16:43:58Z"
+      message: ReplicaSet "hello-limit-867cdfc66" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2020-12-08T16:52:13Z"
+      lastUpdateTime: "2020-12-08T16:52:13Z"
+      message: Deployment does not have minimum availability.
+      reason: MinimumReplicasUnavailable
+      status: "False"
+      type: Available
+    observedGeneration: 4
+    readyReplicas: 1
+    replicas: 4
+    unavailableReplicas: 3
+    updatedReplicas: 4
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "4"
+      deployment.kubernetes.io/max-replicas: "5"
+      deployment.kubernetes.io/revision: "1"
+      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"hello-limit:v1.0"},"fieldPath":"spec.template.spec.containers[?(@.name==\"hello-limit\")].image"}]'
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-12-08T16:43:46Z"
+    generation: 2
+    labels:
+      deployment: hello-limit
+      pod-template-hash: 867cdfc66
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+            f:image.openshift.io/triggers: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:deployment: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"159ef412-35e4-45bc-8dfd-ea47858af111"}:
+              .: {}
+              f:apiVersion: {}
+              f:blockOwnerDeletion: {}
+              f:controller: {}
+              f:kind: {}
+              f:name: {}
+              f:uid: {}
+        f:spec:
+          f:replicas: {}
+          f:selector:
+            f:matchLabels:
+              .: {}
+              f:deployment: {}
+              f:pod-template-hash: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:openshift.io/generated-by: {}
+              f:labels:
+                .: {}
+                f:deployment: {}
+                f:pod-template-hash: {}
+            f:spec:
+              f:containers:
+                k:{"name":"hello-limit"}:
+                  .: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":8080,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+        f:status:
+          f:availableReplicas: {}
+          f:fullyLabeledReplicas: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2020-12-08T16:52:13Z"
+    name: hello-limit-867cdfc66
+    namespace: schedule-limit
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: hello-limit
+      uid: 159ef412-35e4-45bc-8dfd-ea47858af111
+    resourceVersion: "1035705"
+    selfLink: /apis/apps/v1/namespaces/schedule-limit/replicasets/hello-limit-867cdfc66
+    uid: 38c611df-5667-4c0d-8e88-3d3d06932759
+  spec:
+    replicas: 4
+    selector:
+      matchLabels:
+        deployment: hello-limit
+        pod-template-hash: 867cdfc66
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          deployment: hello-limit
+          pod-template-hash: 867cdfc66
+      spec:
+        containers:
+        - image: quay.io/redhattraining/hello-world-nginx@sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+          imagePullPolicy: IfNotPresent
+          name: hello-limit
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources:
+            requests:
+              cpu: 1500m
+              memory: 20Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 4
+    observedGeneration: 2
+    readyReplicas: 1
+    replicas: 4
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      openshift.io/image.dockerRepositoryCheck: "2020-12-08T16:27:23Z"
+    creationTimestamp: "2020-12-08T16:27:21Z"
+    generation: 2
+    labels:
+      app: hello-limit
+      app.kubernetes.io/component: hello-limit
+      app.kubernetes.io/instance: hello-limit
+    managedFields:
+    - apiVersion: image.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+        f:spec:
+          f:tags:
+            .: {}
+            k:{"name":"v1.0"}:
+              .: {}
+              f:annotations:
+                .: {}
+                f:openshift.io/imported-from: {}
+              f:from:
+                .: {}
+                f:kind: {}
+                f:name: {}
+              f:generation: {}
+              f:importPolicy: {}
+              f:name: {}
+              f:referencePolicy:
+                .: {}
+                f:type: {}
+      manager: oc
+      operation: Update
+      time: "2020-12-08T16:27:21Z"
+    name: hello-limit
+    namespace: schedule-limit
+    resourceVersion: "1027306"
+    selfLink: /apis/image.openshift.io/v1/namespaces/schedule-limit/imagestreams/hello-limit
+    uid: 2432a1e0-2db1-46bb-8620-98561769f8a3
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations:
+        openshift.io/imported-from: quay.io/redhattraining/hello-world-nginx:v1.0
+      from:
+        kind: DockerImage
+        name: quay.io/redhattraining/hello-world-nginx:v1.0
+      generation: 2
+      importPolicy: {}
+      name: v1.0
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/schedule-limit/hello-limit
+    tags:
+    - items:
+      - created: "2020-12-08T16:27:23Z"
+        dockerImageReference: quay.io/redhattraining/hello-world-nginx@sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+        generation: 2
+        image: sha256:941928d702a2f08c986017b1eed3417d83952f05de55d657787512e82714dd89
+      tag: v1.0
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
