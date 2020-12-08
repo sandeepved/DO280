@@ -3,40 +3,6 @@ apiVersion: autoscaling/v2beta1
 metadata:
   name: runyapp
   namespace: myproject
-  selfLink: >-
-    /apis/autoscaling/v2beta1/namespaces/myproject/horizontalpodautoscalers/runyapp
-  uid: a5c0a6e4-323b-414a-8c23-e06e7a57b1da
-  resourceVersion: '897778'
-  creationTimestamp: '2020-12-07T18:29:08Z'
-  managedFields:
-    - manager: oc
-      operation: Update
-      apiVersion: autoscaling/v1
-      time: '2020-12-07T18:29:08Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:spec':
-          'f:maxReplicas': {}
-          'f:minReplicas': {}
-          'f:scaleTargetRef':
-            'f:apiVersion': {}
-            'f:kind': {}
-            'f:name': {}
-          'f:targetCPUUtilizationPercentage': {}
-    - manager: kube-controller-manager
-      operation: Update
-      apiVersion: autoscaling/v1
-      time: '2020-12-07T18:35:08Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            .: {}
-            'f:autoscaling.alpha.kubernetes.io/conditions': {}
-        'f:status':
-          'f:currentReplicas': {}
-          'f:desiredReplicas': {}
-          'f:lastScaleTime': {}
 spec:
   scaleTargetRef:
     kind: DeploymentConfig
@@ -49,29 +15,3 @@ spec:
       resource:
         name: cpu
         targetAverageUtilization: 70
-status:
-  lastScaleTime: '2020-12-07T18:29:23Z'
-  currentReplicas: 3
-  desiredReplicas: 3
-  currentMetrics: null
-  conditions:
-    - type: AbleToScale
-      status: 'True'
-      lastTransitionTime: '2020-12-07T18:29:23Z'
-      reason: SucceededGetScale
-      message: the HPA controller was able to get the target's current scale
-    - type: ScalingActive
-      status: 'False'
-      lastTransitionTime: '2020-12-07T18:29:38Z'
-      reason: FailedGetResourceMetric
-      message: >-
-        the HPA was unable to compute the replica count: unable to get metrics
-        for resource cpu: unable to fetch metrics from resource metrics API: an
-        error on the server ("Internal Server Error:
-        \"/apis/metrics.k8s.io/v1beta1/namespaces/myproject/pods?labelSelector=deploymentconfig%!D(MISSING)runyapp\":
-        subjectaccessreviews.authorization.k8s.io is forbidden: User
-        \"system:serviceaccount:openshift-monitoring:prometheus-adapter\" cannot
-        create resource \"subjectaccessreviews\" in API group
-        \"authorization.k8s.io\" at the cluster scope") has prevented the
-        request from succeeding (get pods.metrics.k8s.io)
-
