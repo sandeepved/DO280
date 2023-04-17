@@ -13,13 +13,13 @@ permalink: date # how your URLs are built, see https://jekyllrb.com/docs/permali
 
 #theme: architect
 #theme: cayman
-theme: dinky
+# theme: dinky
 #theme: hacker
 #theme: leap day
 #theme: merlot
 #theme: midnight
 #theme: minima
-#theme: minimal
+theme: minimal
 #theme: modernist
 #theme: slate
 #theme: tactile
