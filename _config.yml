@@ -18,8 +18,8 @@ permalink: date # how your URLs are built, see https://jekyllrb.com/docs/permali
 #theme: leap day
 #theme: merlot
 #theme: midnight
-#theme: minima
-theme: minimal
+theme: minima
+#theme: minimal
 #theme: modernist
 #theme: slate
 #theme: tactile
